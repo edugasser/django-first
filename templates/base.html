@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+{% block html %}{% endblock %}
+<head>
+  <link rel="stylesheet" href="/web/media/css/style.css/" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+
+  {% block head %}{% endblock %}
+
+  {% block js %}{% endblock %}
+  <script type="text/javascript" src="/web/media/js/jquery-1.9.1.min.js"></script>
+  <script src="/web/media/js/jquery-ui.js"></script>
+  <script src="https://github.com/carhartl/jquery-cookie/blob/master/jquery.cookie.js"></script>
+  {{ form.media }}
+  {% block styles %}{% endblock %}
+
+  <title>Exemplo de Ajax - {% block title %}{% endblock %}</title>
+                                                              
+  {% block blockbots %} 
+  <meta name="robots" content="NONE,NOARCHIVE" /> 
+  {% endblock %}
+</head>
+
+<body>
+
+  <div id="summary">
+    <h1>Exemplo de Ajax no Django</h1>
+    <h2>Exemplo de ajax utilizando o JQuery</h2> 
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="/">Exemplo</a></li>
+    </ul>
+  </div>
+
+
+  {% if messages %}
+  <div id="message">
+    {% for message in messages %}
+      {{message}}<br/>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div id="contenido">
+  {% block contenido %}{% endblock %}
+  </div>
+  <br><br><br><br><br>
+  <div id="foot">
+    <p> Desenvolvido por Guilherme Martinez Sampaio &lt;guilhermesampaio@gmail.com&gt;</p>
+  </div> 
+
+</body>
+</html>
+
+

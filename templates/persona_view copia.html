@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<form action="{{ request.build_absolute_uri }}" method="POST">  	{% csrf_token %}
+<leyend>Formulario   </leyend><p></p>
+<table> {{ form.as_table }} </table>
+<p></p><input class="espe" type="submit" value= "ENVIAR" title="envia el formulario">
+</form>
+
+<button onclick="Dajaxice.personas.hello(my_js_callback);">click me </button>
+<script type='text/javascript'>
+	function my_js_callback(data){
+	    alert(data.message);
+	}
+</script>
+{% endblock %}
+

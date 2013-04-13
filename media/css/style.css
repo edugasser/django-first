@@ -1,0 +1,137 @@
+html * {
+    margin:0;
+    padding:0;
+}
+
+body * {
+    padding:10px 20px;
+}
+
+body * * {
+    padding:0;
+}
+
+body {
+    -x-system-font:none;
+    font-family:sans-serif;
+    font-size:small;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+}
+
+body > div {
+    border-bottom:1px solid #DDDDDD;
+}
+
+h1 {
+    font-weight:normal;
+}
+
+h2 {
+    margin-bottom:0.8em;
+}
+
+h2 span {
+    color:#666666;
+    font-size:80%;
+    font-weight:normal;
+}
+
+h3 {
+    margin:1em 0 0.5em;
+}
+h4 {
+    font-weight:normal;
+    margin:0 0 0.5em;
+}
+
+table {
+    background:white none repeat scroll 0 0;
+    border:1px solid #CCCCCC;
+    border-collapse:collapse;
+    width:100%;
+}
+
+tbody td, tbody th {
+    padding:2px 3px;
+    vertical-align:top;
+}
+
+thead th {
+    background:#FEFEFE none repeat scroll 0 0;
+    border:1px solid #DDDDDD;
+    font-size:11px;
+    font-weight:normal;
+    padding:1px 6px 1px 3px;
+    text-align:left;
+}
+
+tbody th {
+    color:#666666;
+    padding-right:0.5em;
+    text-align:right;
+    width:12em;
+}
+
+ul {
+    margin-left:2em;
+    margin-top:1em;
+}
+
+#summary {
+    background:#E0EBFF none repeat scroll 0 0;
+}
+
+#summary h2 {
+    color:#666666;
+    font-weight:normal;
+}
+
+#foot {
+    background:#EEEEEE none repeat scroll 0 0;
+}
+
+#instructions {
+    background:#F6F6F6 none repeat scroll 0 0;
+}
+
+#summary table {
+    background:transparent none repeat scroll 0 0;
+    border:medium none;
+}
+
+#menu {
+  clear: both;
+  overflow: hidden;
+  background-color: #47a;
+  color: white;
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#menu ul li {
+  float: left;
+  list-style: none;
+}
+#menu ul li a:link, #menu ul li a:visited, #menu ul li a:active {
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+#menu ul li a:hover {
+  background-color: #79b;
+  color: white;
+}
+
+.error {
+	color: red;
+   background-color: red
+}
+ 

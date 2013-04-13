@@ -1,0 +1,52 @@
+{% extends "base.html"%}
+
+{% block content-main %}
+
+ <span id="msg"></span>
+<form action=""  enctype="multipart/form-data" id="formulario"  method="POST">{% csrf_token %}
+	{{ formulario.as_p }}
+	<input type="submit" value="Submit"   />
+</form>
+
+<script type="text/javascript">
+$('#formulario').bind('submit', function(e){
+		e.preventDefault();
+		var fd;
+		fd = new FormData($('#formulario').get(0));
+		$.ajax({
+			type: "POST",
+			url: "/web/",
+			data: fd,
+			dataType: "json",
+			processData: false,
+			contentType: false,
+			beforeSend: function(html) {
+				$('#throbber').show();        
+			},
+			success: function(json) {
+				if (json.success == true) {
+					   $('#msg').html("Los datos se han cargado correctamente");
+					  
+				}
+				// Reseteamos el formulario
+				$('*').removeClass('error');
+				$('.msgerror').hide();
+            	// Mostramos form validation errors 
+            	var form_errors = json.errores;         	 
+				for(var fieldname in form_errors) {
+					var errors = form_errors[fieldname];
+					$('input[name="'+fieldname+'"]').addClass('error');
+					$('input[name="'+fieldname+'"]').after('<span class="msgerror">'+json.errores[fieldname]+'<span>');
+           	 	}
+           	 	 
+			},
+			complete: function() {
+				$('#throbber').hide();
+			}  
+		});
+ 	
+	});
+</script>
+ 
+{% endblock %}
+

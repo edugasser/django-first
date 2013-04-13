@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block contenido %}
+ <form action="" method="post" id="formulario" enctype="multipart/form-data">{% csrf_token %}
+    {{ formulario.as_p }}
+    gola
+    <p><input type="submit" value="Send"></p>
+</form>
+ {{ formulario.cropping}}
+ 
+{% endblock %}
+
+ 

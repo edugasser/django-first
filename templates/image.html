@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+
+{% block content-main %}
+
+{% cropped_thumbnail yourmodelinstance "ratiofieldname" [scale=INT|width=INT|height=INT] [upscale] %}
+{% load cropping %}
+ {{ cropping}}
+<img src="{% cropped_thumbnail ficha_persona cropping %}" />
+{% endblock %}
